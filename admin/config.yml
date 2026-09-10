@@ -8,4 +8,49 @@ backend:
 media_folder: "img"
 public_folder: "/img"
 
-collections: []
+collections:
+  - name: "pages"
+    label: "Pages"
+    create: false
+    delete: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text", required: false }
+          - { label: "Hero Button Text", name: "hero_button_text", widget: "string", required: false }
+          - { label: "Hero Button Link", name: "hero_button_link", widget: "string", required: false }
+      - label: "Cortisol Health"
+        name: "cortisol-health"
+        file: "cortisol-health.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+      - label: "FAQ Page"
+        name: "faq"
+        file: "faq.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+      - label: "Guarantee Page"
+        name: "guarantee"
+        file: "guarantee.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+      - label: "How It Works"
+        name: "how-it-works"
+        file: "how-it-works.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+      - label: "Who It's For"
+        name: "who-its-for"
+        file: "who-its-for.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Heading", name: "heading", widget: "string" }
