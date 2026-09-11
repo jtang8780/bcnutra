@@ -4,27 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - BC Nutra</title>
-  <script>
-  var origAdd = window.addEventListener;
-  window.addEventListener = function(type, listener, options) {
-    if (type === 'message') {
-      var wrapped = function(event) {
-        console.log('[DEBUG] Handler called. Origin:', event.origin);
-        console.log('[DEBUG] Data:', String(event.data).substring(0, 100));
-        try {
-          var result = listener(event);
-          console.log('[DEBUG] Handler returned without error');
-          return result;
-        } catch(e) {
-          console.log('[DEBUG] Handler threw:', e.message);
-          throw e;
-        }
-      };
-      return origAdd.call(this, type, wrapped, options);
-    }
-    return origAdd.apply(this, arguments);
-  };
-  </script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
