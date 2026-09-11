@@ -6,6 +6,57 @@
   <title>Content Manager - BC Nutra</title>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js?v=2"></script>
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+  <script>
+  window.CMS_CONFIG = {
+    backend: {
+      name: "github",
+      repo: "jtang8780/bcnutra",
+      branch: "main",
+      auth_type: "pkce",
+      app_id: "Ov23lijLFAagZbCtYo39"
+    },
+    media_folder: "img",
+    public_folder: "/img",
+    collections: [
+      {
+        name: "pages",
+        label: "Pages",
+        create: false,
+        delete: false,
+        files: [
+          { label: "Home Page", name: "home", file: "index.html", fields: [
+            { label: "Page Title", name: "title", widget: "string" },
+            { label: "Hero Heading", name: "hero_heading", widget: "string" },
+            { label: "Hero Subtext", name: "hero_subtext", widget: "text", required: false },
+            { label: "Hero Button Text", name: "hero_button_text", widget: "string", required: false },
+            { label: "Hero Button Link", name: "hero_button_link", widget: "string", required: false }
+          ]},
+          { label: "Cortisol Health", name: "cortisol-health", file: "cortisol-health.html", fields: [
+            { label: "Page Title", name: "title", widget: "string" },
+            { label: "Page Heading", name: "heading", widget: "string" },
+            { label: "Main Content", name: "body", widget: "markdown" }
+          ]},
+          { label: "FAQ Page", name: "faq", file: "faq.html", fields: [
+            { label: "Page Title", name: "title", widget: "string" },
+            { label: "Page Heading", name: "heading", widget: "string" }
+          ]},
+          { label: "Guarantee Page", name: "guarantee", file: "guarantee.html", fields: [
+            { label: "Page Title", name: "title", widget: "string" },
+            { label: "Page Heading", name: "heading", widget: "string" }
+          ]},
+          { label: "How It Works", name: "how-it-works", file: "how-it-works.html", fields: [
+            { label: "Page Title", name: "title", widget: "string" },
+            { label: "Page Heading", name: "heading", widget: "string" }
+          ]},
+          { label: "Who It's For", name: "who-its-for", file: "who-its-for.html", fields: [
+            { label: "Page Title", name: "title", widget: "string" },
+            { label: "Page Heading", name: "heading", widget: "string" }
+          ]}
+        ]
+      }
+    ]
+  };
+  </script>
 </body>
 </html>
