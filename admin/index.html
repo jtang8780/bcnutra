@@ -4,8 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - BC Nutra</title>
+  <script>
+  var origAdd = window.addEventListener;
+  window.addEventListener = function(type, listener) {
+    if (type === 'message') {
+      console.log('[DEBUG] CMS added a message listener');
+    }
+    return origAdd.apply(this, arguments);
+  };
+  </script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.3.0/dist/decap-cms.js"></script>
+  <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 </body>
 </html>
