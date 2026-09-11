@@ -2,8 +2,8 @@ backend:
   name: github
   repo: jtang8780/bcnutra
   branch: main
-  auth_type: pkce
-  app_id: Ov23lijLFAagZbCtYo39
+  base_url: https://bcnutra-cms-oauth.jtang8780.workers.dev
+  auth_endpoint: /auth
 
 media_folder: "img"
 public_folder: "/img"
