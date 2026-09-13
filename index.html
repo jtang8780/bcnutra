@@ -1,10 +1,57 @@
+---
+title: "BC Nutra — Science-Driven Health & Longevity"
+s1_heading: "STRESS & AGING. THEY'RE CONNECTED."
+s1_subtext: "Science-Driven Health & Longevity"
+s1_image: "/img/placeholder-s1.svg"
+s2_heading: "LIFE TAKES A LOT."
+s2_item1: "SLEEP"
+s2_item2: "ENERGY"
+s2_item3: "FOCUS"
+s2_item4: "RECOVERY"
+s2_item5: "APPEARANCE"
+s2_closing: "Your body notices."
+s2_image: "/img/placeholder-s2.svg"
+s3_heading: "SUPPORT YOUR BODY. STAY AHEAD."
+s3_subtext: "Everyday health for a high-demand life."
+s3_button_text: "DISCOVER BC NUTRA"
+s3_button_link: "/how-it-works"
+s4_heading: "FEEL GOOD. LOOK GOOD. KEEP GOING."
+s4_items: "Sleep · Energy · Focus · Appearance"
+s4_button_text: "SHOP NOW"
+s4_button_link: "#"
+s4_image: "/img/placeholder-s4.svg"
+s5_heading: "BETTER CHOICES. BETTER BIOLOGY."
+s5_keyword1: "THOUGHTFUL"
+s5_keyword2: "TRANSPARENT"
+s5_keyword3: "SCIENCE-DRIVEN"
+s5_button_text: "WHY BC NUTRA"
+s5_button_link: "/who-its-for"
+s5_image: "/img/placeholder-s5.svg"
+s6_heading: "AGE WELL. LIVE FULLY."
+s6_subtext: "Start with better everyday support."
+s6_button_text: "SHOP DY NFORMULAS™"
+s6_button_link: "#"
+s6_footer_line: "Questions? Contact us."
+s6_image: "/img/placeholder-s6.svg"
+s7_link1_text: "Support"
+s7_link1_url: "#"
+s7_link2_text: "Common Questions"
+s7_link2_url: "/faq"
+s7_link3_text: "Your Account"
+s7_link3_url: "#"
+s7_link4_text: "Your Privacy Choices"
+s7_link4_url: "#"
+s7_follow_text: "Follow"
+s7_email_text: "Enter your email for exclusive offers, company news, more about our science, and more."
+s7_email_placeholder: "Enter your email address"
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BC Nutra — Cortisol Health Journal</title>
-  <meta name="description" content="BC Nutra — Science-backed cortisol health support. Track, understand, and balance your cortisol levels.">
+  <title>{{title}}</title>
+  <meta name="description" content="BC Nutra — Science-driven health & longevity supplements.">
   <link rel="stylesheet" href="/css/site.css">
   <link rel="icon" type="image/png" href="/img/logo-nav.png">
 </head>
@@ -28,80 +75,116 @@
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Take Control of Your Cortisol Health</h1>
-      <p>Science-backed tools to help you understand, track, and balance your cortisol levels — so you can feel your best every day.</p>
-      <a href="/how-it-works" class="btn btn-primary">Learn How It Works</a>
-      <a href="/cortisol-health" class="btn btn-secondary">Explore Cortisol Health</a>
-    </div>
-    <div class="hero-image">
-      <img src="/img/product-hero.png" alt="BC Nutra Product" class="hero-product-img">
-    </div>
-  </section>
-
-  <section class="features">
-    <div class="container">
-      <h2>Why BC Nutra?</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>🔬 Science-Backed</h3>
-          <p>Formulated based on the latest research on cortisol regulation and stress management.</p>
-        </div>
-        <div class="feature-card">
-          <h3>📋 Track Your Progress</h3>
-          <p>Our cortisol health journal helps you monitor patterns and stay on track.</p>
-        </div>
-        <div class="feature-card">
-          <h3>🌿 Natural Support</h3>
-          <p>Carefully selected ingredients to support your body's natural cortisol balance.</p>
-        </div>
-        <div class="feature-card">
-          <h3>✅ Satisfaction Guaranteed</h3>
-          <p>We stand behind our products with a full satisfaction guarantee.</p>
-        </div>
+  <!-- Screen 1: Hero — text left, image right -->
+  <section class="screen screen1">
+    <div class="screen-container screen-row">
+      <div class="screen-text">
+        <h1>{{s1_heading}}</h1>
+        <p>{{s1_subtext}}</p>
+      </div>
+      <div class="screen-image">
+        <img src="{{s1_image}}" alt="Hero" class="section-img">
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Balance Your Cortisol?</h2>
-      <p>Join thousands who are taking control of their stress and energy levels.</p>
-      <a href="/how-it-works" class="btn btn-primary">Get Started Today</a>
+  <!-- Screen 2: Life Takes A Lot — text around centered image -->
+  <section class="screen screen2">
+    <div class="screen-container">
+      <h2 class="screen2-heading">{{s2_heading}}</h2>
+      <div class="screen2-grid">
+        <div class="screen2-item screen2-tl">{{s2_item1}}</div>
+        <div class="screen2-item screen2-tr">{{s2_item2}}</div>
+        <div class="screen2-image-wrap">
+          <img src="{{s2_image}}" alt="Life" class="section-img">
+        </div>
+        <div class="screen2-item screen2-bl">{{s2_item3}}</div>
+        <div class="screen2-item screen2-br">{{s2_item4}}</div>
+        <div class="screen2-item screen2-bc">{{s2_item5}}</div>
+      </div>
+      <p class="screen2-closing">{{s2_closing}}</p>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <img src="/img/logo-nav.png" alt="BC Nutra" class="footer-logo">
-          <p>Science-backed cortisol health support.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/how-it-works">How It Works</a></li>
-            <li><a href="/who-its-for">Who It's For</a></li>
-            <li><a href="/cortisol-health">Cortisol Health</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/guarantee">Guarantee</a></li>
-            <li><a href="/admin">Admin Login</a></li>
-          </ul>
-        </div>
+  <!-- Screen 3: Support Your Body — text only, centered, CTA style -->
+  <section class="screen screen3">
+    <div class="screen-container screen-center">
+      <h2>{{s3_heading}}</h2>
+      <p>{{s3_subtext}}</p>
+      <a href="{{s3_button_link}}" class="btn btn-light">{{s3_button_text}}</a>
+    </div>
+  </section>
+
+  <!-- Screen 4: Feel Good — image left, text right -->
+  <section class="screen screen4">
+    <div class="screen-container screen-row screen-row-reverse">
+      <div class="screen-image">
+        <img src="{{s4_image}}" alt="Feel Good" class="section-img">
+      </div>
+      <div class="screen-text">
+        <h2>{{s4_heading}}</h2>
+        <p class="screen-items-line">{{s4_items}}</p>
+        <a href="{{s4_button_link}}" class="btn btn-primary">{{s4_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 5: Better Choices — image centered, text above and below -->
+  <section class="screen screen5">
+    <div class="screen-container screen-center">
+      <h2>{{s5_heading}}</h2>
+      <div class="screen5-image-wrap">
+        <img src="{{s5_image}}" alt="Better Choices" class="section-img">
+      </div>
+      <div class="screen5-keywords">
+        <span class="screen5-keyword">{{s5_keyword1}}</span>
+        <span class="screen5-keyword">{{s5_keyword2}}</span>
+        <span class="screen5-keyword">{{s5_keyword3}}</span>
+      </div>
+      <a href="{{s5_button_link}}" class="btn btn-primary">{{s5_button_text}}</a>
+    </div>
+  </section>
+
+  <!-- Screen 6: Age Well — text left, image right -->
+  <section class="screen screen6">
+    <div class="screen-container screen-row">
+      <div class="screen-text">
+        <h2>{{s6_heading}}</h2>
+        <p>{{s6_subtext}}</p>
+        <a href="{{s6_button_link}}" class="btn btn-primary">{{s6_button_text}}</a>
+        <p class="screen6-footer-line">{{s6_footer_line}}</p>
+      </div>
+      <div class="screen-image">
+        <img src="{{s6_image}}" alt="Age Well" class="section-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 7: Footer -->
+  <footer class="screen screen7">
+    <div class="screen-container">
+      <div class="footer-links">
+        <a href="{{s7_link1_url}}">{{s7_link1_text}}</a>
+        <a href="{{s7_link2_url}}">{{s7_link2_text}}</a>
+        <a href="{{s7_link3_url}}">{{s7_link3_text}}</a>
+        <a href="{{s7_link4_url}}">{{s7_link4_text}}</a>
+      </div>
+      <div class="footer-follow">
+        <h4>{{s7_follow_text}}</h4>
+      </div>
+      <div class="footer-email">
+        <p>{{s7_email_text}}</p>
+        <form class="email-form" onsubmit="return false;">
+          <input type="email" placeholder="{{s7_email_placeholder}}" class="email-input">
+          <button type="submit" class="btn btn-primary btn-small">Subscribe</button>
+        </form>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 BC Nutra. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
   <script src="/js/site.js"></script>
 </body>
 </html>
