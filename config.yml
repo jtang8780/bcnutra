@@ -19,90 +19,81 @@ display_url: https://bcnutra.com
 logo_url: /assets/img/logo-nav.png
 
 collections:
-  - name: "home"
-    label: "Home Page"
-    file: "index.html"
-    create: false
-    delete: false
-    fields:
-      - { label: "Page Title (browser tab)", name: "title", widget: "string", hint: "Text shown in the browser tab" }
-      - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false, hint: "Short description that appears in Google search results" }
-      - { label: "Hero Heading", name: "hero_heading", widget: "string", hint: "The big headline at the top of the page" }
-      - { label: "Hero Subtext", name: "hero_subtext", widget: "text", required: false }
-      - { label: "Hero Image", name: "hero_image", widget: "image", required: false, hint: "The main image on the home page" }
-      - { label: "Hero Button Text", name: "hero_button_text", widget: "string", required: false, default: "Learn More" }
-      - { label: "Hero Button Link", name: "hero_button_link", widget: "string", required: false, default: "/how-it-works.html" }
-      - label: "Feature Sections"
-        name: "features"
-        widget: "list"
-        required: false
-        hint: "Add or remove feature blocks on the home page"
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.html"
         fields:
-          - { label: "Feature Heading", name: "heading", widget: "string" }
-          - { label: "Feature Text", name: "text", widget: "text" }
-          - { label: "Feature Image", name: "image", widget: "image", required: false }
-          - { label: "Link", name: "link", widget: "string", required: false }
-      - { label: "Page Body (advanced)", name: "body", widget: "markdown", required: false, hint: "Additional content below the features (Markdown format)" }
+          - { label: "Page Title (browser tab)", name: "title", widget: "string", hint: "Text shown in the browser tab" }
+          - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false, hint: "Short description that appears in Google search results" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string", hint: "The big headline at the top of the page" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text", required: false }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false, hint: "The main image on the home page" }
+          - { label: "Hero Button Text", name: "hero_button_text", widget: "string", required: false, default: "Learn More" }
+          - { label: "Hero Button Link", name: "hero_button_link", widget: "string", required: false, default: "/how-it-works.html" }
+          - label: "Feature Sections"
+            name: "features"
+            widget: "list"
+            required: false
+            hint: "Add or remove feature blocks on the home page"
+            fields:
+              - { label: "Feature Heading", name: "heading", widget: "string" }
+              - { label: "Feature Text", name: "text", widget: "text" }
+              - { label: "Feature Image", name: "image", widget: "image", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+          - { label: "Page Body (advanced)", name: "body", widget: "markdown", required: false, hint: "Additional content below the features (Markdown format)" }
 
-  - name: "cortisol-health"
-    label: "Cortisol Health"
-    file: "cortisol-health.html"
-    create: false
-    delete: false
-    fields:
-      - { label: "Page Title (browser tab)", name: "title", widget: "string" }
-      - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
-      - { label: "Page Heading", name: "heading", widget: "string" }
-      - { label: "Main Content", name: "body", widget: "markdown", hint: "Edit the main text content of this page" }
-      - { label: "Cortisol Curve Image", name: "cortisol_image", widget: "image", required: false }
-
-  - name: "faq"
-    label: "FAQ Page"
-    file: "faq.html"
-    create: false
-    delete: false
-    fields:
-      - { label: "Page Title (browser tab)", name: "title", widget: "string" }
-      - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
-      - { label: "Page Heading", name: "heading", widget: "string" }
-      - label: "FAQ Items"
-        name: "faq_items"
-        widget: "list"
-        hint: "Add, edit, or remove questions and answers"
+      - label: "Cortisol Health"
+        name: "cortisol-health"
+        file: "cortisol-health.html"
         fields:
-          - { label: "Question", name: "question", widget: "string" }
-          - { label: "Answer", name: "answer", widget: "text" }
+          - { label: "Page Title (browser tab)", name: "title", widget: "string" }
+          - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "markdown", hint: "Edit the main text content of this page" }
+          - { label: "Cortisol Curve Image", name: "cortisol_image", widget: "image", required: false }
 
-  - name: "guarantee"
-    label: "Guarantee Page"
-    file: "guarantee.html"
-    create: false
-    delete: false
-    fields:
-      - { label: "Page Title (browser tab)", name: "title", widget: "string" }
-      - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
-      - { label: "Page Heading", name: "heading", widget: "string" }
-      - { label: "Main Content", name: "body", widget: "markdown" }
+      - label: "FAQ Page"
+        name: "faq"
+        file: "faq.html"
+        fields:
+          - { label: "Page Title (browser tab)", name: "title", widget: "string" }
+          - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - label: "FAQ Items"
+            name: "faq_items"
+            widget: "list"
+            hint: "Add, edit, or remove questions and answers"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
 
-  - name: "how-it-works"
-    label: "How It Works"
-    file: "how-it-works.html"
-    create: false
-    delete: false
-    fields:
-      - { label: "Page Title (browser tab)", name: "title", widget: "string" }
-      - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
-      - { label: "Page Heading", name: "heading", widget: "string" }
-      - { label: "Main Content", name: "body", widget: "markdown" }
-      - { label: "Product Image", name: "product_image", widget: "image", required: false }
+      - label: "Guarantee Page"
+        name: "guarantee"
+        file: "guarantee.html"
+        fields:
+          - { label: "Page Title (browser tab)", name: "title", widget: "string" }
+          - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
 
-  - name: "who-its-for"
-    label: "Who It's For"
-    file: "who-its-for.html"
-    create: false
-    delete: false
-    fields:
-      - { label: "Page Title (browser tab)", name: "title", widget: "string" }
-      - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
-      - { label: "Page Heading", name: "heading", widget: "string" }
-      - { label: "Main Content", name: "body", widget: "markdown" }
+      - label: "How It Works"
+        name: "how-it-works"
+        file: "how-it-works.html"
+        fields:
+          - { label: "Page Title (browser tab)", name: "title", widget: "string" }
+          - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+          - { label: "Product Image", name: "product_image", widget: "image", required: false }
+
+      - label: "Who It's For"
+        name: "who-its-for"
+        file: "who-its-for.html"
+        fields:
+          - { label: "Page Title (browser tab)", name: "title", widget: "string" }
+          - { label: "Meta Description (for Google)", name: "description", widget: "text", required: false }
+          - { label: "Page Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
