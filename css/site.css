@@ -15,6 +15,8 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html { scroll-snap-type: y proximity; }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
@@ -22,7 +24,7 @@ body {
   line-height: 1.6;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
 
 /* Navbar */
 .navbar {
@@ -33,7 +35,7 @@ body {
   z-index: 100;
 }
 .nav-container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -72,47 +74,70 @@ body {
 }
 
 /* Screens — shared layout */
-.screen { padding: 80px 20px; }
+.screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  scroll-snap-align: start;
+}
 .screen-container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 .screen-center { text-align: center; }
 .screen-row {
   display: flex;
   align-items: center;
   gap: 60px;
+  width: 100%;
 }
 .screen-row-reverse { flex-direction: row-reverse; }
 .screen-text { flex: 1; }
 .screen-text h1, .screen-text h2 {
-  font-size: 2.4rem;
+  font-size: 3.5rem;
   color: var(--primary-dark);
   margin-bottom: 20px;
-  line-height: 1.2;
+  line-height: 1.1;
+  font-weight: 800;
+}
+.screen-text h3, .screen-text h4 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin: 16px 0 12px;
+  font-weight: 600;
+}
+.screen-text h5, .screen-text h6 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin: 12px 0 8px;
+  font-weight: 600;
 }
 .screen-text p {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   color: var(--text-light);
   margin-bottom: 24px;
 }
+.screen-text strong { font-weight: 800; }
+.screen-text em { font-style: italic; }
 .screen-image { flex: 1; text-align: center; }
+
+/* Image size options */
 .section-img {
   max-width: 100%;
-  max-height: 420px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
 }
-
-/* Image size options */
 .img-normal {
   max-width: 100%;
-  max-height: 420px;
+  max-height: 500px;
   object-fit: cover;
 }
 .img-large {
   width: 100%;
-  max-height: 600px;
+  height: 700px;
   object-fit: cover;
 }
 .img-fullscreen {
@@ -121,60 +146,29 @@ body {
   max-height: 100vh;
   object-fit: cover;
   border-radius: 0;
-}
-
-/* Markdown content styling inside screen sections */
-.screen-text h1, .screen-text h2 {
-  font-size: 2.4rem;
-  color: var(--primary-dark);
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-.screen-text p {
-  font-size: 1.15rem;
-  color: var(--text-light);
-  margin-bottom: 24px;
-}
-.screen-text strong, .screen2-closing strong, .screen3 strong,
-.screen4 strong, .screen5 strong, .screen6 strong {
-  font-weight: 700;
-}
-.screen-text em {
-  font-style: italic;
-}
-.screen-text h3 {
-  font-size: 1.5rem;
-  color: var(--primary);
-  margin: 16px 0 8px;
-}
-.screen-text a {
-  color: var(--primary);
-  text-decoration: underline;
-}
-.screen-text ul, .screen-text ol {
-  margin: 12px 0 12px 24px;
-  color: var(--text-light);
-  font-size: 1.15rem;
-}
-.screen-text li {
-  margin-bottom: 8px;
+  box-shadow: none;
 }
 
 /* Markdown content in centered screens (Screen 3, 5) */
 .screen-center h1, .screen-center h2 {
-  font-size: 2.4rem;
+  font-size: 3.5rem;
   margin-bottom: 16px;
+  font-weight: 800;
 }
-.screen-center h3 {
-  font-size: 1.5rem;
+.screen-center h3, .screen-center h4 {
+  font-size: 1.8rem;
   color: var(--primary);
   margin: 16px 0 8px;
 }
+.screen-center h5, .screen-center h6 {
+  font-size: 1.3rem;
+  margin: 12px 0 8px;
+}
 .screen-center p {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   margin-bottom: 24px;
 }
-.screen-center strong { font-weight: 700; }
+.screen-center strong { font-weight: 800; }
 .screen-center em { font-style: italic; }
 .screen-center a {
   color: var(--primary);
@@ -184,20 +178,21 @@ body {
 /* Markdown content in Screen 2 */
 .screen2-heading h1, .screen2-heading h2 {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 3.5rem;
   color: var(--primary-dark);
   margin-bottom: 40px;
+  font-weight: 800;
 }
 .screen2-closing p {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--text-light);
   margin-top: 40px;
 }
 
 /* Markdown content in Screen 4 items line */
 .screen-items-line p {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   color: var(--text-light);
   margin-bottom: 24px;
 }
@@ -205,7 +200,7 @@ body {
 /* Markdown content in Screen 6 footer line */
 .screen6-footer-line p {
   margin-top: 20px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-light);
 }
 
@@ -229,9 +224,10 @@ body {
 .screen2 { background: var(--white); }
 .screen2-heading {
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 3.5rem;
   color: var(--primary-dark);
   margin-bottom: 40px;
+  font-weight: 800;
 }
 .screen2-grid {
   display: grid;
@@ -239,8 +235,8 @@ body {
   grid-template-rows: auto auto;
   align-items: center;
   justify-items: center;
-  gap: 20px;
-  max-width: 800px;
+  gap: 30px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .screen2-image-wrap {
@@ -249,20 +245,20 @@ body {
   text-align: center;
 }
 .screen2-image-wrap .section-img {
-  max-height: 300px;
+  max-height: 400px;
   border-radius: 50%;
   object-fit: cover;
 }
 .screen2-item {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   letter-spacing: 0.08em;
   color: var(--primary);
   padding: 10px 16px;
 }
 .screen2-closing {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--text-light);
   margin-top: 40px;
 }
@@ -272,8 +268,9 @@ body {
   background: var(--primary-dark);
   color: var(--white);
 }
-.screen3 h2 { font-size: 2.4rem; margin-bottom: 16px; color: var(--white); }
-.screen3 p { font-size: 1.15rem; margin-bottom: 30px; opacity: 0.9; }
+.screen3 h2 { font-size: 3.5rem; margin-bottom: 16px; color: var(--white); font-weight: 800; }
+.screen3 h1 { font-size: 3.5rem; margin-bottom: 16px; color: var(--white); font-weight: 800; }
+.screen3 p { font-size: 1.4rem; margin-bottom: 30px; opacity: 0.9; }
 .btn-light {
   background: var(--white);
   color: var(--primary-dark);
@@ -287,7 +284,7 @@ body {
 .screen5 { background: var(--white); }
 .screen5-image-wrap {
   margin: 40px auto;
-  max-width: 420px;
+  max-width: 500px;
 }
 .screen5-image-wrap .section-img {
   width: 100%;
@@ -308,13 +305,14 @@ body {
   border: 2px solid var(--primary-light);
   padding: 10px 18px;
   border-radius: 30px;
+  font-size: 1.1rem;
 }
 
 /* Screen 6 — Age Well */
 .screen6 { background: var(--bg); }
 .screen6-footer-line {
   margin-top: 20px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-light);
 }
 
@@ -323,6 +321,9 @@ body {
   background: var(--text);
   color: var(--white);
   padding: 60px 20px 20px;
+  min-height: auto;
+  display: block;
+  scroll-snap-align: none;
 }
 .footer-links {
   display: flex;
@@ -407,11 +408,11 @@ body {
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 16px 40px;
   border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: all 0.2s;
   margin-right: 12px;
   margin-bottom: 10px;
@@ -444,11 +445,13 @@ body {
     display: none;
   }
   .nav-menu.active { display: flex; }
-  .screen { padding: 50px 20px; }
+  .screen { padding: 50px 20px; min-height: auto; }
   .screen-row, .screen-row-reverse { flex-direction: column; gap: 30px; }
-  .screen-text h1, .screen-text h2, .screen2-heading, .screen3 h2 { font-size: 1.9rem; }
+  .screen-text h1, .screen-text h2, .screen2-heading, .screen3 h2 { font-size: 2.2rem; }
+  .screen-text p, .screen-center p { font-size: 1.2rem; }
   .screen2-grid { grid-template-columns: 1fr; }
   .screen2-image-wrap { grid-column: 1; grid-row: auto; }
   .screen2-item { text-align: center; }
   .footer-links { gap: 16px; }
+  .img-fullscreen { height: 60vh; }
 }
