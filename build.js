@@ -95,6 +95,9 @@ function markdownToHtml(md) {
   html = html.replace(/\[color:([#\w]+)\](.*?)\[\/color\]/g, '<span style="color:$1;">$2</span>');
 
   // Headings (process before bold so # isn't confused)
+  html = html.replace(/^######\s+(.+)$/gm, '<h6>$1</h6>');
+  html = html.replace(/^#####\s+(.+)$/gm, '<h5>$1</h5>');
+  html = html.replace(/^####\s+(.+)$/gm, '<h4>$1</h4>');
   html = html.replace(/^###\s+(.+)$/gm, '<h3>$1</h3>');
   html = html.replace(/^##\s+(.+)$/gm, '<h2>$1</h2>');
   html = html.replace(/^#\s+(.+)$/gm, '<h1>$1</h1>');
