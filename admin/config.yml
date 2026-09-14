@@ -16,72 +16,195 @@ collections:
         name: "index"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Screen 1 Heading", name: "s1_heading", widget: "markdown" }
-          - { label: "Screen 1 Subtext", name: "s1_subtext", widget: "markdown" }
-          - { label: "Screen 1 Image", name: "s1_image", widget: "image" }
-          - label: "Screen 1 Image Size"
+          # Screen 1 — Hero
+          - { label: "S1 Heading", name: "s1_heading", widget: "markdown" }
+          - { label: "S1 Subtext", name: "s1_subtext", widget: "markdown" }
+          - { label: "S1 Image", name: "s1_image", widget: "image" }
+          - label: "S1 Image Size"
             name: "s1_image_size"
             widget: "select"
             options: ["normal", "large", "fullscreen"]
             default: "normal"
-          - { label: "Screen 2 Heading", name: "s2_heading", widget: "markdown" }
-          - { label: "Screen 2 Item 1", name: "s2_item1", widget: "string" }
-          - { label: "Screen 2 Item 2", name: "s2_item2", widget: "string" }
-          - { label: "Screen 2 Item 3", name: "s2_item3", widget: "string" }
-          - { label: "Screen 2 Item 4", name: "s2_item4", widget: "string" }
-          - { label: "Screen 2 Item 5", name: "s2_item5", widget: "string" }
-          - { label: "Screen 2 Closing Line", name: "s2_closing", widget: "markdown" }
-          - { label: "Screen 2 Image", name: "s2_image", widget: "image" }
-          - label: "Screen 2 Image Size"
+          - label: "S1 Image Width"
+            name: "s1_image_width"
+            widget: "select"
+            options: ["40%", "50%", "60%", "70%"]
+            default: "50%"
+          - label: "S1 Image Position"
+            name: "s1_image_position"
+            widget: "select"
+            options: ["left", "right"]
+            default: "right"
+          - label: "S1 Image Fit"
+            name: "s1_image_fit"
+            widget: "select"
+            options: ["contain", "cover"]
+            default: "contain"
+            hint: "contain = show full image (no crop), cover = fill area (may crop)"
+          - label: "S1 Text Position"
+            name: "s1_text_position"
+            widget: "select"
+            options: ["left", "center", "right"]
+            default: "left"
+          - label: "S1 Line Height"
+            name: "s1_line_height"
+            widget: "select"
+            options: ["tight", "normal", "relaxed", "loose"]
+            default: "normal"
+          # Screen 2 — Life Takes A Lot
+          - { label: "S2 Heading", name: "s2_heading", widget: "markdown" }
+          - { label: "S2 Item 1", name: "s2_item1", widget: "string" }
+          - { label: "S2 Item 2", name: "s2_item2", widget: "string" }
+          - { label: "S2 Item 3", name: "s2_item3", widget: "string" }
+          - { label: "S2 Item 4", name: "s2_item4", widget: "string" }
+          - { label: "S2 Item 5", name: "s2_item5", widget: "string" }
+          - { label: "S2 Closing Line", name: "s2_closing", widget: "markdown" }
+          - { label: "S2 Image", name: "s2_image", widget: "image" }
+          - label: "S2 Image Size"
             name: "s2_image_size"
             widget: "select"
             options: ["normal", "large", "fullscreen"]
             default: "normal"
-          - { label: "Screen 3 Heading", name: "s3_heading", widget: "markdown" }
-          - { label: "Screen 3 Subtext", name: "s3_subtext", widget: "markdown" }
-          - { label: "Screen 3 Button Text", name: "s3_button_text", widget: "string" }
-          - { label: "Screen 3 Button Link", name: "s3_button_link", widget: "string" }
-          - { label: "Screen 4 Heading", name: "s4_heading", widget: "markdown" }
-          - { label: "Screen 4 Items", name: "s4_items", widget: "markdown" }
-          - { label: "Screen 4 Button Text", name: "s4_button_text", widget: "string" }
-          - { label: "Screen 4 Button Link", name: "s4_button_link", widget: "string" }
-          - { label: "Screen 4 Image", name: "s4_image", widget: "image" }
-          - label: "Screen 4 Image Size"
+          - label: "S2 Image Fit"
+            name: "s2_image_fit"
+            widget: "select"
+            options: ["contain", "cover"]
+            default: "contain"
+          - label: "S2 Line Height"
+            name: "s2_line_height"
+            widget: "select"
+            options: ["tight", "normal", "relaxed", "loose"]
+            default: "normal"
+          # Screen 3 — Support Your Body
+          - { label: "S3 Heading", name: "s3_heading", widget: "markdown" }
+          - { label: "S3 Subtext", name: "s3_subtext", widget: "markdown" }
+          - { label: "S3 Button Text", name: "s3_button_text", widget: "string" }
+          - { label: "S3 Button Link", name: "s3_button_link", widget: "string" }
+          - label: "S3 Text Position"
+            name: "s3_text_position"
+            widget: "select"
+            options: ["left", "center", "right"]
+            default: "center"
+          - label: "S3 Line Height"
+            name: "s3_line_height"
+            widget: "select"
+            options: ["tight", "normal", "relaxed", "loose"]
+            default: "normal"
+          # Screen 4 — Feel Good
+          - { label: "S4 Heading", name: "s4_heading", widget: "markdown" }
+          - { label: "S4 Items (use · to separate)", name: "s4_items", widget: "markdown" }
+          - { label: "S4 Button Text", name: "s4_button_text", widget: "string" }
+          - { label: "S4 Button Link", name: "s4_button_link", widget: "string" }
+          - { label: "S4 Image", name: "s4_image", widget: "image" }
+          - label: "S4 Image Size"
             name: "s4_image_size"
             widget: "select"
             options: ["normal", "large", "fullscreen"]
             default: "normal"
-          - { label: "Screen 5 Heading", name: "s5_heading", widget: "markdown" }
-          - { label: "Screen 5 Keyword 1", name: "s5_keyword1", widget: "string" }
-          - { label: "Screen 5 Keyword 2", name: "s5_keyword2", widget: "string" }
-          - { label: "Screen 5 Keyword 3", name: "s5_keyword3", widget: "string" }
-          - { label: "Screen 5 Button Text", name: "s5_button_text", widget: "string" }
-          - { label: "Screen 5 Button Link", name: "s5_button_link", widget: "string" }
-          - { label: "Screen 5 Image", name: "s5_image", widget: "image" }
-          - label: "Screen 5 Image Size"
+          - label: "S4 Image Width"
+            name: "s4_image_width"
+            widget: "select"
+            options: ["40%", "50%", "60%", "70%"]
+            default: "50%"
+          - label: "S4 Image Position"
+            name: "s4_image_position"
+            widget: "select"
+            options: ["left", "right"]
+            default: "left"
+          - label: "S4 Image Fit"
+            name: "s4_image_fit"
+            widget: "select"
+            options: ["contain", "cover"]
+            default: "contain"
+          - label: "S4 Text Position"
+            name: "s4_text_position"
+            widget: "select"
+            options: ["left", "center", "right"]
+            default: "left"
+          - label: "S4 Line Height"
+            name: "s4_line_height"
+            widget: "select"
+            options: ["tight", "normal", "relaxed", "loose"]
+            default: "normal"
+          # Screen 5 — Better Choices
+          - { label: "S5 Heading", name: "s5_heading", widget: "markdown" }
+          - { label: "S5 Keyword 1", name: "s5_keyword1", widget: "string" }
+          - { label: "S5 Keyword 2", name: "s5_keyword2", widget: "string" }
+          - { label: "S5 Keyword 3", name: "s5_keyword3", widget: "string" }
+          - { label: "S5 Button Text", name: "s5_button_text", widget: "string" }
+          - { label: "S5 Button Link", name: "s5_button_link", widget: "string" }
+          - { label: "S5 Image", name: "s5_image", widget: "image" }
+          - label: "S5 Image Size"
             name: "s5_image_size"
             widget: "select"
             options: ["normal", "large", "fullscreen"]
             default: "normal"
-          - { label: "Screen 6 Heading", name: "s6_heading", widget: "markdown" }
-          - { label: "Screen 6 Subtext", name: "s6_subtext", widget: "markdown" }
-          - { label: "Screen 6 Button Text", name: "s6_button_text", widget: "string" }
-          - { label: "Screen 6 Button Link", name: "s6_button_link", widget: "string" }
-          - { label: "Screen 6 Footer Line", name: "s6_footer_line", widget: "markdown" }
-          - { label: "Screen 6 Image", name: "s6_image", widget: "image" }
-          - label: "Screen 6 Image Size"
+          - label: "S5 Image Width"
+            name: "s5_image_width"
+            widget: "select"
+            options: ["40%", "50%", "60%", "70%"]
+            default: "50%"
+          - label: "S5 Image Fit"
+            name: "s5_image_fit"
+            widget: "select"
+            options: ["contain", "cover"]
+            default: "contain"
+          - label: "S5 Text Position"
+            name: "s5_text_position"
+            widget: "select"
+            options: ["left", "center", "right"]
+            default: "center"
+          - label: "S5 Line Height"
+            name: "s5_line_height"
+            widget: "select"
+            options: ["tight", "normal", "relaxed", "loose"]
+            default: "normal"
+          # Screen 6 — Age Well
+          - { label: "S6 Heading", name: "s6_heading", widget: "markdown" }
+          - { label: "S6 Subtext", name: "s6_subtext", widget: "markdown" }
+          - { label: "S6 Button Text", name: "s6_button_text", widget: "string" }
+          - { label: "S6 Button Link", name: "s6_button_link", widget: "string" }
+          - { label: "S6 Footer Line", name: "s6_footer_line", widget: "markdown" }
+          - { label: "S6 Image", name: "s6_image", widget: "image" }
+          - label: "S6 Image Size"
             name: "s6_image_size"
             widget: "select"
             options: ["normal", "large", "fullscreen"]
             default: "normal"
-          - { label: "Screen 7 Link 1 Text", name: "s7_link1_text", widget: "string" }
-          - { label: "Screen 7 Link 1 URL", name: "s7_link1_url", widget: "string" }
-          - { label: "Screen 7 Link 2 Text", name: "s7_link2_text", widget: "string" }
-          - { label: "Screen 7 Link 2 URL", name: "s7_link2_url", widget: "string" }
-          - { label: "Screen 7 Link 3 Text", name: "s7_link3_text", widget: "string" }
-          - { label: "Screen 7 Link 3 URL", name: "s7_link3_url", widget: "string" }
-          - { label: "Screen 7 Link 4 Text", name: "s7_link4_text", widget: "string" }
-          - { label: "Screen 7 Link 4 URL", name: "s7_link4_url", widget: "string" }
-          - { label: "Follow Text", name: "s7_follow_text", widget: "string" }
-          - { label: "Email Signup Text", name: "s7_email_text", widget: "markdown" }
-          - { label: "Email Placeholder", name: "s7_email_placeholder", widget: "string" }
+          - label: "S6 Image Width"
+            name: "s6_image_width"
+            widget: "select"
+            options: ["40%", "50%", "60%", "70%"]
+            default: "50%"
+          - label: "S6 Image Position"
+            name: "s6_image_position"
+            widget: "select"
+            options: ["left", "right"]
+            default: "right"
+          - label: "S6 Image Fit"
+            name: "s6_image_fit"
+            widget: "select"
+            options: ["contain", "cover"]
+            default: "contain"
+          - label: "S6 Text Position"
+            name: "s6_text_position"
+            widget: "select"
+            options: ["left", "center", "right"]
+            default: "left"
+          - label: "S6 Line Height"
+            name: "s6_line_height"
+            widget: "select"
+            options: ["tight", "normal", "relaxed", "loose"]
+            default: "normal"
+          # Screen 7 — Footer
+          - { label: "S7 Link 1 Text", name: "s7_link1_text", widget: "string" }
+          - { label: "S7 Link 1 URL", name: "s7_link1_url", widget: "string" }
+          - { label: "S7 Link 2 Text", name: "s7_link2_text", widget: "string" }
+          - { label: "S7 Link 2 URL", name: "s7_link2_url", widget: "string" }
+          - { label: "S7 Link 3 Text", name: "s7_link3_text", widget: "string" }
+          - { label: "S7 Link 3 URL", name: "s7_link3_url", widget: "string" }
+          - { label: "S7 Link 4 Text", name: "s7_link4_text", widget: "string" }
+          - { label: "S7 Link 4 URL", name: "s7_link4_url", widget: "string" }
+          - { label: "S7 Follow Text", name: "s7_follow_text", widget: "string" }
+          - { label: "S7 Email Signup Text", name: "s7_email_text", widget: "markdown" }
+          - { label: "S7 Email Placeholder", name: "s7_email_placeholder", widget: "string" }

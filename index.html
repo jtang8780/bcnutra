@@ -4,9 +4,15 @@ s1_heading: |-
   # **STRESS & AGING**
 
   # **THEY'RE CONNECTED**
-s1_subtext: "#### *Science-Driven Health & Longevity*"
+s1_subtext: |-
+  #### Science-Driven Health & Longevity
 s1_image: /img/s1-4.jpg
-s1_image_size: large
+s1_image_size: fullscreen
+s1_image_width: "50%"
+s1_image_position: right
+s1_image_fit: contain
+s1_text_position: left
+s1_line_height: normal
 s2_heading: LIFE TAKES A LOT.
 s2_item1: SLEEP
 s2_item2: ENERGY
@@ -16,16 +22,25 @@ s2_item5: APPEARANCE
 s2_closing: Your body notices.
 s2_image: /img/placeholder-s2.svg
 s2_image_size: normal
+s2_image_fit: contain
+s2_line_height: normal
 s3_heading: SUPPORT YOUR BODY. STAY AHEAD.
 s3_subtext: Everyday health for a high-demand life.
 s3_button_text: DISCOVER BC NUTRA
 s3_button_link: /how-it-works
+s3_text_position: center
+s3_line_height: normal
 s4_heading: FEEL GOOD. LOOK GOOD. KEEP GOING.
 s4_items: Sleep · Energy · Focus · Appearance
 s4_button_text: SHOP NOW
 s4_button_link: "#"
 s4_image: /img/s4-2.jpg
 s4_image_size: normal
+s4_image_width: "50%"
+s4_image_position: left
+s4_image_fit: contain
+s4_text_position: left
+s4_line_height: normal
 s5_heading: BETTER CHOICES. BETTER BIOLOGY.
 s5_keyword1: THOUGHTFUL
 s5_keyword2: TRANSPARENT
@@ -34,6 +49,10 @@ s5_button_text: WHY BC NUTRA
 s5_button_link: /who-its-for
 s5_image: /img/placeholder-s5.svg
 s5_image_size: normal
+s5_image_width: "50%"
+s5_image_fit: contain
+s5_text_position: center
+s5_line_height: normal
 s6_heading: AGE WELL. LIVE FULLY.
 s6_subtext: Start with better everyday support.
 s6_button_text: SHOP DY NFORMULAS™
@@ -41,6 +60,11 @@ s6_button_link: "#"
 s6_footer_line: Questions? Contact us.
 s6_image: /img/placeholder-s6.svg
 s6_image_size: normal
+s6_image_width: "50%"
+s6_image_position: right
+s6_image_fit: contain
+s6_text_position: left
+s6_line_height: normal
 s7_link1_text: Support
 s7_link1_url: "#"
 s7_link2_text: Common Questions
@@ -86,26 +110,26 @@ s7_email_placeholder: Enter your email address
 
   <!-- Screen 1: Hero — text left, image right -->
   <section class="screen screen1">
-    <div class="screen-container screen-row">
-      <div class="screen-text">
-        <h1>{{s1_heading}}</h1>
-        <p>{{s1_subtext}}</p>
+    <div class="screen-container screen-row img-{{s1_image_position}}">
+      <div class="screen-text text-{{s1_text_position}} lh-{{s1_line_height}}">
+        {{s1_heading}}
+        {{s1_subtext}}
       </div>
       <div class="screen-image">
-        <img src="{{s1_image}}" alt="Hero" class="section-img img-{{s1_image_size}}">
+        <img src="{{s1_image}}" alt="Hero" class="section-img img-{{s1_image_size}} img-w-{{s1_image_width}} img-{{s1_image_fit}}">
       </div>
     </div>
   </section>
 
   <!-- Screen 2: Life Takes A Lot — text around centered image -->
   <section class="screen screen2">
-    <div class="screen-container">
+    <div class="screen-container lh-{{s2_line_height}}">
       <h2 class="screen2-heading">{{s2_heading}}</h2>
       <div class="screen2-grid">
         <div class="screen2-item screen2-tl">{{s2_item1}}</div>
         <div class="screen2-item screen2-tr">{{s2_item2}}</div>
         <div class="screen2-image-wrap">
-          <img src="{{s2_image}}" alt="Life" class="section-img img-{{s2_image_size}}">
+          <img src="{{s2_image}}" alt="Life" class="section-img img-{{s2_image_size}} img-{{s2_image_fit}}">
         </div>
         <div class="screen2-item screen2-bl">{{s2_item3}}</div>
         <div class="screen2-item screen2-br">{{s2_item4}}</div>
@@ -117,21 +141,21 @@ s7_email_placeholder: Enter your email address
 
   <!-- Screen 3: Support Your Body — text only, centered, CTA style -->
   <section class="screen screen3">
-    <div class="screen-container screen-center">
-      <h2>{{s3_heading}}</h2>
-      <p>{{s3_subtext}}</p>
+    <div class="screen-container screen-center text-{{s3_text_position}} lh-{{s3_line_height}}">
+      {{s3_heading}}
+      {{s3_subtext}}
       <a href="{{s3_button_link}}" class="btn btn-light">{{s3_button_text}}</a>
     </div>
   </section>
 
   <!-- Screen 4: Feel Good — image left, text right -->
   <section class="screen screen4">
-    <div class="screen-container screen-row screen-row-reverse">
+    <div class="screen-container screen-row img-{{s4_image_position}}">
       <div class="screen-image">
-        <img src="{{s4_image}}" alt="Feel Good" class="section-img img-{{s4_image_size}}">
+        <img src="{{s4_image}}" alt="Feel Good" class="section-img img-{{s4_image_size}} img-w-{{s4_image_width}} img-{{s4_image_fit}}">
       </div>
-      <div class="screen-text">
-        <h2>{{s4_heading}}</h2>
+      <div class="screen-text text-{{s4_text_position}} lh-{{s4_line_height}}">
+        {{s4_heading}}
         <p class="screen-items-line">{{s4_items}}</p>
         <a href="{{s4_button_link}}" class="btn btn-primary">{{s4_button_text}}</a>
       </div>
@@ -140,10 +164,10 @@ s7_email_placeholder: Enter your email address
 
   <!-- Screen 5: Better Choices — image centered, text above and below -->
   <section class="screen screen5">
-    <div class="screen-container screen-center">
-      <h2>{{s5_heading}}</h2>
+    <div class="screen-container screen-center text-{{s5_text_position}} lh-{{s5_line_height}}">
+      {{s5_heading}}
       <div class="screen5-image-wrap">
-        <img src="{{s5_image}}" alt="Better Choices" class="section-img img-{{s5_image_size}}">
+        <img src="{{s5_image}}" alt="Better Choices" class="section-img img-{{s5_image_size}} img-w-{{s5_image_width}} img-{{s5_image_fit}}">
       </div>
       <div class="screen5-keywords">
         <span class="screen5-keyword">{{s5_keyword1}}</span>
@@ -156,15 +180,15 @@ s7_email_placeholder: Enter your email address
 
   <!-- Screen 6: Age Well — text left, image right -->
   <section class="screen screen6">
-    <div class="screen-container screen-row">
-      <div class="screen-text">
-        <h2>{{s6_heading}}</h2>
-        <p>{{s6_subtext}}</p>
+    <div class="screen-container screen-row img-{{s6_image_position}}">
+      <div class="screen-text text-{{s6_text_position}} lh-{{s6_line_height}}">
+        {{s6_heading}}
+        {{s6_subtext}}
         <a href="{{s6_button_link}}" class="btn btn-primary">{{s6_button_text}}</a>
         <p class="screen6-footer-line">{{s6_footer_line}}</p>
       </div>
       <div class="screen-image">
-        <img src="{{s6_image}}" alt="Age Well" class="section-img img-{{s6_image_size}}">
+        <img src="{{s6_image}}" alt="Age Well" class="section-img img-{{s6_image_size}} img-w-{{s6_image_width}} img-{{s6_image_fit}}">
       </div>
     </div>
   </section>
