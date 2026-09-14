@@ -1,6 +1,6 @@
 // build.js — Reads YAML front matter from each page, replaces {{placeholders}}
 // in the HTML, and outputs the finished site to /dist.
-// Includes a built-in YAML parser so no npm install is needed.
+// Includes a built-in YAML parser that handles Decap CMS output (block scalars, folded lines).
 
 const fs = require('fs');
 const path = require('path');
@@ -12,73 +12,71 @@ const PAGES = [
 ];
 
 // --- Built-in YAML parser (handles Decap CMS output) ---
-// Supports: plain strings, quoted strings, multi-line block scalars (| and >),
-// nested objects, arrays, and inline flow style {key: value}
 function parseYaml(text) {
   const lines = text.split('\n');
   const result = {};
   let i = 0;
-  
+
   while (i < lines.length) {
     const line = lines[i];
-    // Skip empty lines and comments
     if (!line.trim() || line.trim().startsWith('#')) { i++; continue; }
-    
-    // Check for key: value pattern
+
+    // Match top-level key: value (key must start at column 0)
     const kvMatch = line.match(/^(\S[^:]*):\s*(.*)$/);
-    if (kvMatch) {
-      const key = kvMatch[1].trim();
-      let val = kvMatch[2].trim();
-      
-      if (val === '|' || val === '>') {
-        // Block scalar — read indented lines
-        const blockLines = [];
-        i++;
-        while (i < lines.length) {
-          const nextLine = lines[i];
-          if (nextLine.trim() === '') { blockLines.push(''); i++; continue; }
-          if (/^\s/.test(nextLine)) {
-            blockLines.push(nextLine.replace(/^\s+/, ''));
-            i++;
-          } else {
-            break;
-          }
-        }
-        // For '|' preserve newlines, for '>' fold them
-        if (val === '>') {
-          result[key] = blockLines.join('\n').replace(/\n/g, ' ');
-        } else {
-          result[key] = blockLines.join('\n');
-        }
-        continue;
-      }
-      
-      if (val === '') {
-        // Could be nested object or array — skip for our flat front matter
-        i++;
-        // Check if next lines are indented (nested)
-        if (i < lines.length && /^\s+/.test(lines[i]) && !lines[i].trim().startsWith('-')) {
-          // Nested object — skip for now, we only need flat keys
-          while (i < lines.length && /^\s+/.test(lines[i])) { i++; }
-        }
-        continue;
-      }
-      
-      // Remove quotes
-      val = val.replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
-      
-      // Handle inline flow style for arrays: ["a", "b", "c"]
-      if (val.startsWith('[') && val.endsWith(']')) {
-        result[key] = val; // Keep as string for our purposes
-      } else {
-        result[key] = val;
-      }
+    if (!kvMatch) { i++; continue; }
+
+    const key = kvMatch[1].trim();
+    let val = kvMatch[2].trim();
+
+    // Block scalars: |, |-, |+, >, >-, >+
+    if (/^[|>][-+]?$/.test(val)) {
+      const isFolded = val.startsWith('>');
+      const isStrip = val.endsWith('-');
+      const blockLines = [];
       i++;
-    } else {
+      while (i < lines.length) {
+        const nextLine = lines[i];
+        if (nextLine.trim() === '') { blockLines.push(''); i++; continue; }
+        if (/^\s/.test(nextLine)) {
+          blockLines.push(nextLine.replace(/^\s+/, ''));
+          i++;
+        } else { break; }
+      }
+      // Remove trailing empty lines collected at the end
+      while (blockLines.length > 0 && blockLines[blockLines.length - 1] === '') {
+        blockLines.pop();
+      }
+      let value;
+      if (isFolded) {
+        value = blockLines.join('\n').replace(/\n(?!\n)/g, ' ');
+      } else {
+        value = blockLines.join('\n');
+      }
+      if (isStrip) value = value.replace(/\n+$/, '');
+      result[key] = value;
+      continue;
+    }
+
+    if (val === '') {
+      // Nested object or array — skip indented lines
+      i++;
+      while (i < lines.length && /^\s+/.test(lines[i])) { i++; }
+      continue;
+    }
+
+    // Remove surrounding quotes
+    val = val.replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
+
+    // Check for folded continuation lines (plain scalar wrapping to next indented line)
+    i++;
+    while (i < lines.length && /^\s+\S/.test(lines[i]) && !/^\s+\S[^:]*:/.test(lines[i])) {
+      val += ' ' + lines[i].trim();
       i++;
     }
+
+    result[key] = val;
   }
-  
+
   return result;
 }
 
@@ -96,13 +94,10 @@ function markdownToHtml(md) {
   // Color spans
   html = html.replace(/\[color:([#\w]+)\](.*?)\[\/color\]/g, '<span style="color:$1;">$2</span>');
 
-  // Font weight
-  html = html.replace(/\[bold\](.*?)\[\/bold\]/g, '<strong>$1</strong>');
-
-  // Headings
+  // Headings (process before bold so # isn't confused)
   html = html.replace(/^###\s+(.+)$/gm, '<h3>$1</h3>');
   html = html.replace(/^##\s+(.+)$/gm, '<h2>$1</h2>');
-  html.replace(/^#\s+(.+)$/gm, '<h1>$1</h1>');
+  html = html.replace(/^#\s+(.+)$/gm, '<h1>$1</h1>');
 
   // Bold and italic
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
