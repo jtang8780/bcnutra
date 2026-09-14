@@ -1,59 +1,54 @@
 ---
-s2_item3: FOCUS
-s3: SUPPORT YOUR BODY. STAY AHEAD.    Everyday health for a high-demand life.  [
-  DISCOVER S&A Lab ]
-s7_follow_text: Follow
-s1_heading: STRESS & AGING. THEY'RE CONNECTED.
-s2_item4: RECOVERY
-s4: FEEL GOOD. LOOK GOOD. KEEP GOING.    Sleep · Energy · Focus · Appearance
-s4_items: Sleep · Energy · Focus · Appearance
-s2_item5: APPEARANCE
-s5: BETTER CHOICES. BETTER BIOLOGY.    THOUGHTFUL TRANSPARENT SCIENCE-DRIVEN
-s2_heading: LIFE TAKES A LOT.
-s6: AGE WELL. LIVE FULLY.  Start with better everyday support.  [ SHOP DY
-  NFORMULAS™ ]
-s3_heading: SUPPORT YOUR BODY. STAY AHEAD.
-s4_heading: FEEL GOOD. LOOK GOOD. KEEP GOING.
-s7: Privacy Policy Terms of Use Disclaimer
-s5_keyword1: THOUGHTFUL
-s5_heading: BETTER CHOICES. BETTER BIOLOGY.
-s5_keyword2: TRANSPARENT
-s6_heading: AGE WELL. LIVE FULLY.
-s5_keyword3: SCIENCE-DRIVEN
-s3_button_link: /how-it-works
+title: "BC Nutra — Science-Driven Health & Longevity"
+s1_heading: "STRESS & AGING. THEY'RE CONNECTED."
+s1_subtext: "Science-Driven Health & Longevity"
+s1_image: "/img/placeholder-s1.svg"
+s1_image_size: "normal"
+s2_heading: "LIFE TAKES A LOT."
+s2_item1: "SLEEP"
+s2_item2: "ENERGY"
+s2_item3: "FOCUS"
+s2_item4: "RECOVERY"
+s2_item5: "APPEARANCE"
+s2_closing: "Your body notices."
+s2_image: "/img/placeholder-s2.svg"
+s2_image_size: "normal"
+s3_heading: "SUPPORT YOUR BODY. STAY AHEAD."
+s3_subtext: "Everyday health for a high-demand life."
+s3_button_text: "DISCOVER BC NUTRA"
+s3_button_link: "/how-it-works"
+s4_heading: "FEEL GOOD. LOOK GOOD. KEEP GOING."
+s4_items: "Sleep · Energy · Focus · Appearance"
+s4_button_text: "SHOP NOW"
 s4_button_link: "#"
-s5_button_link: /who-its-for
+s4_image: "/img/placeholder-s4.svg"
+s4_image_size: "normal"
+s5_heading: "BETTER CHOICES. BETTER BIOLOGY."
+s5_keyword1: "THOUGHTFUL"
+s5_keyword2: "TRANSPARENT"
+s5_keyword3: "SCIENCE-DRIVEN"
+s5_button_text: "WHY BC NUTRA"
+s5_button_link: "/who-its-for"
+s5_image: "/img/placeholder-s5.svg"
+s5_image_size: "normal"
+s6_heading: "AGE WELL. LIVE FULLY."
+s6_subtext: "Start with better everyday support."
+s6_button_text: "SHOP DY NFORMULAS™"
 s6_button_link: "#"
-s7_email_text: Enter your email for exclusive offers, company news, more about
-  our science, and more.
+s6_footer_line: "Questions? Contact us."
+s6_image: "/img/placeholder-s6.svg"
+s6_image_size: "normal"
+s7_link1_text: "Support"
 s7_link1_url: "#"
-s1_subtext: Science-Driven Health & Longevity
-s7_link4_text: Your Privacy Choices
-s7_link2_url: /faq
-s3_subtext: Everyday health for a high-demand life.
-s7_link3_text: Your Account
+s7_link2_text: "Common Questions"
+s7_link2_url: "/faq"
+s7_link3_text: "Your Account"
 s7_link3_url: "#"
-s7_link2_text: Common Questions
+s7_link4_text: "Your Privacy Choices"
 s7_link4_url: "#"
-s7_link1_text: Support
-s6_subtext: Start with better everyday support.
-s2_closing: Your body notices.
-s7_email_placeholder: Enter your email address
-title: BC Nutra — Science-Driven Health & Longevity
-s1_image: /img/placeholder-s1.svg
-s3_button_text: DISCOVER BC NUTRA
-s2_image: /img/placeholder-s2.svg
-s4_button_text: SHOP NOW
-s6_footer_line: Questions? Contact us.
-s4_image: /img/placeholder-s4.svg
-s5_button_text: WHY BC NUTRA
-s5_image: /img/placeholder-s5.svg
-s2_item1: SLEEP
-s6_button_text: SHOP DY NFORMULAS™
-s1: STRESS & AGING.       THEY’RE CONNECTED.  Science-Driven Health & Longevity
-s6_image: /img/placeholder-s6.svg
-s2_item2: ENERGY
-s2: LIFE TAKES A LOT.  SLEEP ENERGY FOCUS RECOVERY APPEARANCE   Your body notices.
+s7_follow_text: "Follow"
+s7_email_text: "Enter your email for exclusive offers, company news, more about our science, and more."
+s7_email_placeholder: "Enter your email address"
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +88,7 @@ s2: LIFE TAKES A LOT.  SLEEP ENERGY FOCUS RECOVERY APPEARANCE   Your body notice
         <p>{{s1_subtext}}</p>
       </div>
       <div class="screen-image">
-        <img src="{{s1_image}}" alt="Hero" class="section-img">
+        <img src="{{s1_image}}" alt="Hero" class="section-img img-{{s1_image_size}}">
       </div>
     </div>
   </section>
@@ -106,7 +101,7 @@ s2: LIFE TAKES A LOT.  SLEEP ENERGY FOCUS RECOVERY APPEARANCE   Your body notice
         <div class="screen2-item screen2-tl">{{s2_item1}}</div>
         <div class="screen2-item screen2-tr">{{s2_item2}}</div>
         <div class="screen2-image-wrap">
-          <img src="{{s2_image}}" alt="Life" class="section-img">
+          <img src="{{s2_image}}" alt="Life" class="section-img img-{{s2_image_size}}">
         </div>
         <div class="screen2-item screen2-bl">{{s2_item3}}</div>
         <div class="screen2-item screen2-br">{{s2_item4}}</div>
@@ -129,7 +124,7 @@ s2: LIFE TAKES A LOT.  SLEEP ENERGY FOCUS RECOVERY APPEARANCE   Your body notice
   <section class="screen screen4">
     <div class="screen-container screen-row screen-row-reverse">
       <div class="screen-image">
-        <img src="{{s4_image}}" alt="Feel Good" class="section-img">
+        <img src="{{s4_image}}" alt="Feel Good" class="section-img img-{{s4_image_size}}">
       </div>
       <div class="screen-text">
         <h2>{{s4_heading}}</h2>
@@ -144,7 +139,7 @@ s2: LIFE TAKES A LOT.  SLEEP ENERGY FOCUS RECOVERY APPEARANCE   Your body notice
     <div class="screen-container screen-center">
       <h2>{{s5_heading}}</h2>
       <div class="screen5-image-wrap">
-        <img src="{{s5_image}}" alt="Better Choices" class="section-img">
+        <img src="{{s5_image}}" alt="Better Choices" class="section-img img-{{s5_image_size}}">
       </div>
       <div class="screen5-keywords">
         <span class="screen5-keyword">{{s5_keyword1}}</span>
@@ -165,7 +160,7 @@ s2: LIFE TAKES A LOT.  SLEEP ENERGY FOCUS RECOVERY APPEARANCE   Your body notice
         <p class="screen6-footer-line">{{s6_footer_line}}</p>
       </div>
       <div class="screen-image">
-        <img src="{{s6_image}}" alt="Age Well" class="section-img">
+        <img src="{{s6_image}}" alt="Age Well" class="section-img img-{{s6_image_size}}">
       </div>
     </div>
   </section>
