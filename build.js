@@ -125,4 +125,9 @@ for (const dir of ['css', 'js', 'img', 'admin']) {
   if (fs.existsSync(dir)) copyDir(dir, path.join(OUT, dir));
 }
 
+// Copy root-level Pages config files (_headers, _redirects)
+for (const file of ['_headers', '_redirects']) {
+  if (fs.existsSync(file)) fs.copyFileSync(file, path.join(OUT, file));
+}
+
 console.log('Build complete. Output in /' + OUT);
