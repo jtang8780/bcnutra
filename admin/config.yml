@@ -16,101 +16,72 @@ collections:
         name: "index"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - label: "Screen 1 — Hero"
-            name: "s1"
-            collapsed: false
-            fields:
-              - { label: "Heading", name: "s1_heading", widget: "markdown" }
-              - { label: "Subtext", name: "s1_subtext", widget: "markdown" }
-              - { label: "Image", name: "s1_image", widget: "image" }
-              - label: "Image Size"
-                name: "s1_image_size"
-                widget: "select"
-                options: ["normal", "large", "fullscreen"]
-                default: "normal"
-                hint: "normal = standard size, large = taller, fullscreen = full screen height"
-          - label: "Screen 2 — Life Takes A Lot"
-            name: "s2"
-            collapsed: false
-            fields:
-              - { label: "Heading", name: "s2_heading", widget: "markdown" }
-              - { label: "Item 1", name: "s2_item1", widget: "string" }
-              - { label: "Item 2", name: "s2_item2", widget: "string" }
-              - { label: "Item 3", name: "s2_item3", widget: "string" }
-              - { label: "Item 4", name: "s2_item4", widget: "string" }
-              - { label: "Item 5", name: "s2_item5", widget: "string" }
-              - { label: "Closing Line", name: "s2_closing", widget: "markdown" }
-              - { label: "Image", name: "s2_image", widget: "image" }
-              - label: "Image Size"
-                name: "s2_image_size"
-                widget: "select"
-                options: ["normal", "large", "fullscreen"]
-                default: "normal"
-          - label: "Screen 3 — Support Your Body"
-            name: "s3"
-            collapsed: false
-            fields:
-              - { label: "Heading", name: "s3_heading", widget: "markdown" }
-              - { label: "Subtext", name: "s3_subtext", widget: "markdown" }
-              - { label: "Button Text", name: "s3_button_text", widget: "string" }
-              - { label: "Button Link", name: "s3_button_link", widget: "string" }
-          - label: "Screen 4 — Feel Good"
-            name: "s4"
-            collapsed: false
-            fields:
-              - { label: "Heading", name: "s4_heading", widget: "markdown" }
-              - { label: "Items (use · to separate)", name: "s4_items", widget: "markdown" }
-              - { label: "Button Text", name: "s4_button_text", widget: "string" }
-              - { label: "Button Link", name: "s4_button_link", widget: "string" }
-              - { label: "Image", name: "s4_image", widget: "image" }
-              - label: "Image Size"
-                name: "s4_image_size"
-                widget: "select"
-                options: ["normal", "large", "fullscreen"]
-                default: "normal"
-          - label: "Screen 5 — Better Choices"
-            name: "s5"
-            collapsed: false
-            fields:
-              - { label: "Heading", name: "s5_heading", widget: "markdown" }
-              - { label: "Keyword 1", name: "s5_keyword1", widget: "string" }
-              - { label: "Keyword 2", name: "s5_keyword2", widget: "string" }
-              - { label: "Keyword 3", name: "s5_keyword3", widget: "string" }
-              - { label: "Button Text", name: "s5_button_text", widget: "string" }
-              - { label: "Button Link", name: "s5_button_link", widget: "string" }
-              - { label: "Image", name: "s5_image", widget: "image" }
-              - label: "Image Size"
-                name: "s5_image_size"
-                widget: "select"
-                options: ["normal", "large", "fullscreen"]
-                default: "normal"
-          - label: "Screen 6 — Age Well"
-            name: "s6"
-            collapsed: false
-            fields:
-              - { label: "Heading", name: "s6_heading", widget: "markdown" }
-              - { label: "Subtext", name: "s6_subtext", widget: "markdown" }
-              - { label: "Button Text", name: "s6_button_text", widget: "string" }
-              - { label: "Button Link", name: "s6_button_link", widget: "string" }
-              - { label: "Footer Line", name: "s6_footer_line", widget: "markdown" }
-              - { label: "Image", name: "s6_image", widget: "image" }
-              - label: "Image Size"
-                name: "s6_image_size"
-                widget: "select"
-                options: ["normal", "large", "fullscreen"]
-                default: "normal"
-          - label: "Screen 7 — Footer"
-            name: "s7"
-            collapsed: false
-            fields:
-              - { label: "Link 1 Text", name: "s7_link1_text", widget: "string" }
-              - { label: "Link 1 URL", name: "s7_link1_url", widget: "string" }
-              - { label: "Link 2 Text", name: "s7_link2_text", widget: "string" }
-              - { label: "Link 2 URL", name: "s7_link2_url", widget: "string" }
-              - { label: "Link 3 Text", name: "s7_link3_text", widget: "string" }
-              - { label: "Link 3 URL", name: "s7_link3_url", widget: "string" }
-              - { label: "Link 4 Text", name: "s7_link4_text", widget: "string" }
-              - { label: "Link 4 URL", name: "s7_link4_url", widget: "string" }
-              - { label: "Follow Text", name: "s7_follow_text", widget: "string" }
-              - { label: "Email Signup Text", name: "s7_email_text", widget: "markdown" }
-              - { label: "Email Placeholder", name: "s7_email_placeholder", widget: "string" }
+          - { label: "Screen 1 Heading", name: "s1_heading", widget: "markdown" }
+          - { label: "Screen 1 Subtext", name: "s1_subtext", widget: "markdown" }
+          - { label: "Screen 1 Image", name: "s1_image", widget: "image" }
+          - label: "Screen 1 Image Size"
+            name: "s1_image_size"
+            widget: "select"
+            options: ["normal", "large", "fullscreen"]
+            default: "normal"
+          - { label: "Screen 2 Heading", name: "s2_heading", widget: "markdown" }
+          - { label: "Screen 2 Item 1", name: "s2_item1", widget: "string" }
+          - { label: "Screen 2 Item 2", name: "s2_item2", widget: "string" }
+          - { label: "Screen 2 Item 3", name: "s2_item3", widget: "string" }
+          - { label: "Screen 2 Item 4", name: "s2_item4", widget: "string" }
+          - { label: "Screen 2 Item 5", name: "s2_item5", widget: "string" }
+          - { label: "Screen 2 Closing Line", name: "s2_closing", widget: "markdown" }
+          - { label: "Screen 2 Image", name: "s2_image", widget: "image" }
+          - label: "Screen 2 Image Size"
+            name: "s2_image_size"
+            widget: "select"
+            options: ["normal", "large", "fullscreen"]
+            default: "normal"
+          - { label: "Screen 3 Heading", name: "s3_heading", widget: "markdown" }
+          - { label: "Screen 3 Subtext", name: "s3_subtext", widget: "markdown" }
+          - { label: "Screen 3 Button Text", name: "s3_button_text", widget: "string" }
+          - { label: "Screen 3 Button Link", name: "s3_button_link", widget: "string" }
+          - { label: "Screen 4 Heading", name: "s4_heading", widget: "markdown" }
+          - { label: "Screen 4 Items", name: "s4_items", widget: "markdown" }
+          - { label: "Screen 4 Button Text", name: "s4_button_text", widget: "string" }
+          - { label: "Screen 4 Button Link", name: "s4_button_link", widget: "string" }
+          - { label: "Screen 4 Image", name: "s4_image", widget: "image" }
+          - label: "Screen 4 Image Size"
+            name: "s4_image_size"
+            widget: "select"
+            options: ["normal", "large", "fullscreen"]
+            default: "normal"
+          - { label: "Screen 5 Heading", name: "s5_heading", widget: "markdown" }
+          - { label: "Screen 5 Keyword 1", name: "s5_keyword1", widget: "string" }
+          - { label: "Screen 5 Keyword 2", name: "s5_keyword2", widget: "string" }
+          - { label: "Screen 5 Keyword 3", name: "s5_keyword3", widget: "string" }
+          - { label: "Screen 5 Button Text", name: "s5_button_text", widget: "string" }
+          - { label: "Screen 5 Button Link", name: "s5_button_link", widget: "string" }
+          - { label: "Screen 5 Image", name: "s5_image", widget: "image" }
+          - label: "Screen 5 Image Size"
+            name: "s5_image_size"
+            widget: "select"
+            options: ["normal", "large", "fullscreen"]
+            default: "normal"
+          - { label: "Screen 6 Heading", name: "s6_heading", widget: "markdown" }
+          - { label: "Screen 6 Subtext", name: "s6_subtext", widget: "markdown" }
+          - { label: "Screen 6 Button Text", name: "s6_button_text", widget: "string" }
+          - { label: "Screen 6 Button Link", name: "s6_button_link", widget: "string" }
+          - { label: "Screen 6 Footer Line", name: "s6_footer_line", widget: "markdown" }
+          - { label: "Screen 6 Image", name: "s6_image", widget: "image" }
+          - label: "Screen 6 Image Size"
+            name: "s6_image_size"
+            widget: "select"
+            options: ["normal", "large", "fullscreen"]
+            default: "normal"
+          - { label: "Screen 7 Link 1 Text", name: "s7_link1_text", widget: "string" }
+          - { label: "Screen 7 Link 1 URL", name: "s7_link1_url", widget: "string" }
+          - { label: "Screen 7 Link 2 Text", name: "s7_link2_text", widget: "string" }
+          - { label: "Screen 7 Link 2 URL", name: "s7_link2_url", widget: "string" }
+          - { label: "Screen 7 Link 3 Text", name: "s7_link3_text", widget: "string" }
+          - { label: "Screen 7 Link 3 URL", name: "s7_link3_url", widget: "string" }
+          - { label: "Screen 7 Link 4 Text", name: "s7_link4_text", widget: "string" }
+          - { label: "Screen 7 Link 4 URL", name: "s7_link4_url", widget: "string" }
+          - { label: "Follow Text", name: "s7_follow_text", widget: "string" }
+          - { label: "Email Signup Text", name: "s7_email_text", widget: "markdown" }
+          - { label: "Email Placeholder", name: "s7_email_placeholder", widget: "string" }
